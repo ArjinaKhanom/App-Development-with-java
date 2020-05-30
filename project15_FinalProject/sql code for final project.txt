@@ -1,0 +1,50 @@
+--Name: Arjina Khanom--
+--CST3613--
+--FINAL PROJECT--
+--SQL Code--
+--Azure Data Studio--
+-----------------------------------
+
+select *from dbo.Students;
+
+insert into dbo.Students
+VALUES ('234567891', 'Arjina', null, 'Khanom', '10/8/1995', '300 jay st.','3483454232','11201', 'CST' );
+
+select *from dbo.Course;
+
+select *from dbo.Enrollment;
+
+-------------------Joining two tables------
+
+select Course.courseID, title, numOfCredits from Course, Enrollment, Students
+ where Course.courseID = Enrollment.courseId
+ and Students.ssn  = Enrollment.ssn and Students.ssn = '234567891';
+
+----------to enroll a class--------
+ insert into dbo.Enrollment 
+ values ('234567891', 'CST35','5/15/2020','A');
+------------------------------------------------------
+select * from dbo.Students;
+
+select * from dbo.Enrollment;
+
+select * from dbo.Course;
+
+---------to join two tables and get value -------
+
+select Course.courseID, title, numOfCredits from Course, Enrollment, Students
+ where Course.courseID = Enrollment.courseId
+ and Students.ssn  = Enrollment.ssn and Students.ssn = '234567891';
+
+-----insert data into enrollment table-------
+ insert into dbo.Enrollment 
+ values ('234567891', 'ACC11','5/16/2020','A');
+
+ insert into dbo.Enrollment 
+ values ('234567891', 'CST06','5/16/2020','A');
+
+ insert into dbo.Enrollment 
+ values ('234567891', 'CST35','5/15/2020','A');
+
+  insert into dbo.Enrollment 
+ values ('234567891', 'BUS24','5/16/2020','A');
